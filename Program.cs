@@ -17,7 +17,6 @@ class WeatherApp : Window
         SetPosition(WindowPosition.Center);
 
         cityinput = new Entry { PlaceholderText = "Введи свой город вонючий" };
-
         Button getWeatherButton = new Button("Покажи погоду");
 
         // This function is called when the getTheWeather button is clicked
@@ -26,7 +25,7 @@ class WeatherApp : Window
         temperatureLabel = new Label("Хуевая погода");
 
         // Create vertical box container
-        VBox vertbox = new VBox();
+        Box vertbox = new Box(Orientation.Vertical, 0);
         vertbox.PackStart(cityinput, false, false, 5);
         vertbox.PackStart(getWeatherButton, false, false, 5);
         vertbox.PackStart(temperatureLabel, false, false, 5);
@@ -67,8 +66,11 @@ class WeatherApp : Window
         string responseBody = await response.Content.ReadAsStringAsync();
         JObject weatherData = JObject.Parse(responseBody);
 
-        string description = weatherData["weather"][0]["description"].ToString();
-        string temp = weatherData["main"]["temp"].ToString();
+        string description;
+        string temp;
+
+        description = weatherData["weather"]?[0]?["description"]?.ToString() ?? "нечего";
+        temp = weatherData["main"]?["temp"]?.ToString() ?? "нечего";
 
         return $"Погода в {city}: {description}, {temp} °C";
     }
@@ -76,7 +78,12 @@ class WeatherApp : Window
     public static void Main()
     {
         Application.Init();
-        new WeatherApp();
+        WeatherApp MainApp = new WeatherApp();
+        MainApp.DeleteEvent += delegate
+        {
+            Console.WriteLine("App is closed");
+            Application.Quit();
+        };
         Application.Run();
     }
 
