@@ -1,76 +1,82 @@
-WhatWeather
+# WhatWeather
 
-WhatWeather — это простое приложение на C# с использованием библиотеки GTK для отображения текущей погоды в указанном городе. Приложение взаимодействует с API OpenWeatherMap для получения данных о погоде.
-Особенности
+WhatWeather is a simple C# application using the GTK library to display the current weather in a specified city. The app fetches weather data from the OpenWeatherMap API.
+Features
 
-    Пользовательский ввод города.
-    Отображение температуры и краткого описания погоды.
-    Простой и минималистичный интерфейс.
+    User input for city name.
+    Displays temperature and a brief weather description.
+    Simple and minimalist interface.
 
-Требования
+Requirements
 
-    .NET SDK 6.0 или новее.
-    GTK 3.0 (установите, если не установлено).
-    Учетная запись и API-ключ на OpenWeatherMap.
-    Библиотеки NuGet:
+    .NET SDK 6.0 or newer.
+    GTK 3.0 (install if not already installed).
+    An account and API key from OpenWeatherMap.
+    NuGet packages:
         Newtonsoft.Json
         DotNetEnv
 
-Установка
+Installation
 
-    Клонируйте репозиторий:
+    Clone the repository:
 
-git clone https://github.com/ваш_репозиторий/WhatWeather.git
+git clone https://github.com/your_repository/WhatWeather.git
 cd WhatWeather
 
-Установите зависимости:
+Install dependencies:
 
-Убедитесь, что у вас установлен GTK 3.0:
+Ensure GTK 3.0 is installed:
 
-Для Ubuntu/Debian:
+### For Debian:
 
     sudo apt update
     sudo apt install libgtk-3-dev
 
-Для Fedora:
+### For Fedora:
 
     sudo dnf install gtk3-devel
 
-Для Windows:
-    Установите GTK 3 для Windows.
+### For Windows:
 
-Установите библиотеки NuGet:
+    Install GTK 3 for Windows.
 
-    dotnet add package Newtonsoft.Json
-    dotnet add package DotNetEnv
+Add required NuGet packages:
 
-Добавьте API-ключ:
+dotnet add package Newtonsoft.Json
+dotnet add package DotNetEnv
 
-    Создайте файл .env в корне проекта и добавьте ваш API-ключ:
+Add the API key:
 
-    OPENWEATHERMAP_API_KEY=ваш_api_ключ
+    Create a .env file in the project root directory and add your API key:
 
-    Зарегистрируйтесь и получите API-ключ на сайте OpenWeatherMap.
+    OPENWEATHERMAP_API_KEY=your_api_key
 
-Сборка и запуск:
+    Register and obtain an API key at OpenWeatherMap.
 
-Скомпилируйте и запустите приложение:
+## Build and run:
+
+Compile and start the application:
 
     dotnet run
 
-Использование
+## Usage
 
-    Запустите приложение.
-    Введите название города в текстовое поле.
-    Нажмите кнопку start.
-    На экране появится информация о текущей погоде в выбранном городе.
+    Launch the application.
+    Enter the name of a city in the input field.
+    Click the start button.
+    The app will display the current weather information for the specified city.
 
-Пример работы
+Example Output
 
-Этот проект распространяется под лицензией MIT. Подробности см. в файле LICENSE.
-Автор
+Input: New York
+Output: Weather in New York: clear sky, 12.0 °C
 
-Создан с использованием GTK и OpenWeatherMap API.
-Ваше имя | Ваш GitHub профиль
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+Author
+
+Built using GTK and OpenWeatherMap API.
+Jaroslav | ruzen42
 
 Enjoy! 🌤️
