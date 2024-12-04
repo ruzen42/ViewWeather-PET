@@ -2,33 +2,33 @@
 using Newtonsoft.Json.Linq;
 using DotNetEnv;
 
-class WeatherApp : Window
+internal class WeatherApp : Window
 {
     // City entry
-    private Entry cityinput;
-    private Label temperatureLabel;
-    private string? apikey;
+    private Entry _cityinput;
+    private Label _temperatureLabel;
+    private string? _apikey;
 
-    public WeatherApp() : base("Weather App")
+    private WeatherApp() : base("WhatWeather")
     {
         Env.Load();
-        apikey = Environment.GetEnvironmentVariable("OPENWEATHERMAP_API_KEY");
+        _apikey = Environment.GetEnvironmentVariable("OPENWEATHERMAP_API_KEY");
         SetDefaultSize(400, 200);
         SetPosition(WindowPosition.Center);
 
-        cityinput = new Entry { PlaceholderText = "Введи свой город вонючий" };
-        Button getWeatherButton = new Button("Покажи погоду");
+        _cityinput = new Entry { PlaceholderText = "Enter city here" };
+        var getWeatherButton = new Button("start");
 
         // This function is called when the getTheWeather button is clicked
         getWeatherButton.Clicked += GetTheWeather;
 
-        temperatureLabel = new Label("Хуевая погода");
+        _temperatureLabel = new Label("?");
 
         // Create vertical box container
-        Box vertbox = new Box(Orientation.Vertical, 0);
-        vertbox.PackStart(cityinput, false, false, 5);
+        var vertbox = new Box(Orientation.Vertical, 0);
+        vertbox.PackStart(_cityinput, false, false, 5);
         vertbox.PackStart(getWeatherButton, false, false, 5);
-        vertbox.PackStart(temperatureLabel, false, false, 5);
+        vertbox.PackStart(_temperatureLabel, false, false, 5);
 
         Add(vertbox);
         ShowAll();
@@ -36,41 +36,44 @@ class WeatherApp : Window
 
     private async void GetTheWeather(object? sender, EventArgs e)
     {
-        string currentcity = cityinput.Text;
+        string currentcity = _cityinput.Text;
+        string WeatherInfo = "";
+        
         if (string.IsNullOrEmpty(currentcity))
         {
-            temperatureLabel.Text = "Введи ебучий город пожайлуста";
+            _temperatureLabel.Text = "enter city here";
             return;
         }
-        string WeatherInfo = "1488";
+        
         try
         {
             WeatherInfo = await GetStringAsync(currentcity);
         }
         catch (Exception ex)
         {
-            temperatureLabel.Text = $"Вашего мухосранска {currentcity} не существует";
+            _temperatureLabel.Text = $"{currentcity} not exist";
             Console.WriteLine(ex.Message);
         }
-        temperatureLabel.Text = WeatherInfo;
+        
+        _temperatureLabel.Text = WeatherInfo;
     }
 
     private async Task<string> GetStringAsync(string city)
     {
-        string url = $"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={apikey}&units=metric";
+        string url = $"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={_apikey}&units=metric";
 
-        HttpClient client = new HttpClient();
-        HttpResponseMessage response = await client.GetAsync(url);
+        var client = new HttpClient();
+        var response = await client.GetAsync(url);
         response.EnsureSuccessStatusCode();
 
         string responseBody = await response.Content.ReadAsStringAsync();
-        JObject weatherData = JObject.Parse(responseBody);
+        var weatherData = JObject.Parse(responseBody);
 
         string description;
         string temp;
 
-        description = weatherData["weather"]?[0]?["description"]?.ToString() ?? "нечего";
-        temp = weatherData["main"]?["temp"]?.ToString() ?? "нечего";
+        description = weatherData["weather"]?[0]?["description"]?.ToString() ?? "NULL";
+        temp = weatherData["main"]?["temp"]?.ToString() ?? "NULL";
 
         return $"Погода в {city}: {description}, {temp} °C";
     }
@@ -78,12 +81,13 @@ class WeatherApp : Window
     public static void Main()
     {
         Application.Init();
-        WeatherApp MainApp = new WeatherApp();
-        MainApp.DeleteEvent += delegate
+        var mainApp = new WeatherApp();
+        mainApp.DeleteEvent += delegate
         {
             Console.WriteLine("App is closed");
             Application.Quit();
         };
+        
         Application.Run();
     }
 

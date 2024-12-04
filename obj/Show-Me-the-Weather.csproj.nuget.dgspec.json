@@ -1,18 +1,19 @@
 {
   "format": 1,
   "restore": {
-    "/home/ruzen42/Programing/CSharp/ViewWeather-PET/Show-Me-the-Weather.csproj": {}
+    "/home/ruzen42/Documents/Programming/WhatWeather/Show-Me-the-Weather.csproj": {}
   },
   "projects": {
-    "/home/ruzen42/Programing/CSharp/ViewWeather-PET/Show-Me-the-Weather.csproj": {
+    "/home/ruzen42/Documents/Programming/WhatWeather/Show-Me-the-Weather.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ruzen42/Programing/CSharp/ViewWeather-PET/Show-Me-the-Weather.csproj",
+        "projectUniqueName": "/home/ruzen42/Documents/Programming/WhatWeather/Show-Me-the-Weather.csproj",
         "projectName": "Show-Me-the-Weather",
-        "projectPath": "/home/ruzen42/Programing/CSharp/ViewWeather-PET/Show-Me-the-Weather.csproj",
+        "projectPath": "/home/ruzen42/Documents/Programming/WhatWeather/Show-Me-the-Weather.csproj",
         "packagesPath": "/home/ruzen42/.nuget/packages/",
-        "outputPath": "/home/ruzen42/Programing/CSharp/ViewWeather-PET/obj/",
+        "outputPath": "/home/ruzen42/Documents/Programming/WhatWeather/obj/",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/home/ruzen42/.nuget/NuGet/NuGet.Config"
         ],
@@ -32,6 +33,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -66,12 +72,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

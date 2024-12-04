@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HGofrCWT/Sv8qg6enPkHH9cVn74T2G/dGLknlmoqWRNUhGLcXUVNOLXJShxhMPcQW+7eMSqKKTmf2z3YMQ/MnA==",
+  "dgSpecHash": "naL5FcDHVhY=",
   "success": true,
-  "projectFilePath": "/home/ruzen42/Programing/CSharp/ViewWeather-PET/Show-Me-the-Weather.csproj",
+  "projectFilePath": "/home/ruzen42/Documents/Programming/WhatWeather/Show-Me-the-Weather.csproj",
   "expectedPackageFiles": [
     "/home/ruzen42/.nuget/packages/atksharp/3.24.24.95/atksharp.3.24.24.95.nupkg.sha512",
     "/home/ruzen42/.nuget/packages/cairosharp/3.24.24.95/cairosharp.3.24.24.95.nupkg.sha512",
@@ -91,7 +91,10 @@
     "/home/ruzen42/.nuget/packages/system.threading.tasks.extensions/4.3.0/system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "/home/ruzen42/.nuget/packages/system.threading.timer/4.3.0/system.threading.timer.4.3.0.nupkg.sha512",
     "/home/ruzen42/.nuget/packages/system.xml.readerwriter/4.3.0/system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "/home/ruzen42/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512"
+    "/home/ruzen42/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
+    "/home/ruzen42/.nuget/packages/microsoft.netcore.app.ref/8.0.11/microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "/home/ruzen42/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
+    "/home/ruzen42/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.11/microsoft.netcore.app.host.linux-x64.8.0.11.nupkg.sha512"
   ],
   "logs": []
 }
