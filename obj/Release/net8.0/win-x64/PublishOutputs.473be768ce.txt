@@ -1,0 +1,2 @@
+/home/ruzen42/Documents/Programming/WhatWeather/win/Show-Me-the-Weather.pdb
+/home/ruzen42/Documents/Programming/WhatWeather/win/Show-Me-the-Weather.exe
