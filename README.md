@@ -1,5 +1,6 @@
 # WhatWeather
-![image](https://github.com/user-attachments/assets/065abb83-3d25-48e8-9fa8-b5ffdca868fb)
+![image](https://github.com/user-attachments/assets/61fce856-8d92-40fa-b602-47c358ef69ef)
+![image](https://github.com/user-attachments/assets/3a5debc7-c067-4680-a20b-1f149ba47489) 
 
 WhatWeather is a simple C# application using the GTK library to display the current weather in a specified city. The app fetches weather data from the OpenWeatherMap API.
 Features
