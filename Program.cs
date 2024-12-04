@@ -22,7 +22,7 @@ internal class WeatherApp : Window
         // This function is called when the getTheWeather button is clicked
         getWeatherButton.Clicked += GetTheWeather;
 
-        _temperatureLabel = new Label("?");
+        _temperatureLabel = new Label();
 
         // Create vertical box container
         var vertbox = new Box(Orientation.Vertical, 0);
@@ -41,7 +41,7 @@ internal class WeatherApp : Window
         
         if (string.IsNullOrEmpty(currentcity))
         {
-            _temperatureLabel.Text = "enter city here";
+            _temperatureLabel.Text = "NULL";
             return;
         }
         
