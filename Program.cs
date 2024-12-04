@@ -13,11 +13,11 @@ internal class WeatherApp : Window
     {
         Env.Load();
         _apikey = Environment.GetEnvironmentVariable("OPENWEATHERMAP_API_KEY");
-        SetDefaultSize(400, 200);
+        SetDefaultSize(300, 110);
         SetPosition(WindowPosition.Center);
 
         _cityinput = new Entry { PlaceholderText = "Enter city here" };
-        var getWeatherButton = new Button("start");
+        var getWeatherButton = new Button("Start");
 
         // This function is called when the getTheWeather button is clicked
         getWeatherButton.Clicked += GetTheWeather;
@@ -75,16 +75,16 @@ internal class WeatherApp : Window
         description = weatherData["weather"]?[0]?["description"]?.ToString() ?? "NULL";
         temp = weatherData["main"]?["temp"]?.ToString() ?? "NULL";
 
-        return $"Погода в {city}: {description}, {temp} °C";
+        return $"Weather in {city}: {description}, {temp} °C";
     }
 
     public static void Main()
     {
         Application.Init();
         var mainApp = new WeatherApp();
+	mainApp.Resizable = false;
         mainApp.DeleteEvent += delegate
         {
-            Console.WriteLine("App is closed");
             Application.Quit();
         };
         
